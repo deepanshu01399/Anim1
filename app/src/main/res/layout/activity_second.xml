@@ -16,7 +16,7 @@
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="450dp"
             app:contentScrim="@color/purple_200"
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed|snap"
             app:toolbarId="@id/toolbar">
@@ -24,7 +24,8 @@
             <ImageView
                 android:id="@+id/alluArjunImage"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="55dp"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/allu"

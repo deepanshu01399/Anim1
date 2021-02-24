@@ -2,11 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="30dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/ll1"
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -24,12 +26,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/animatedTxt"
             android:layout_gravity="end"
-            android:text="Animinate" />
+            android:text="Animinate blink" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll3"
         android:layout_width="match_parent"
+        android:gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:layout_below="@id/ll1"
         android:layout_marginTop="10dp">
@@ -52,7 +56,19 @@
             android:layout_below="@id/animatedTxt"
             android:layout_gravity="end"
             android:layout_marginLeft="25dp"
-            android:text="Animinate" />
+            android:text="Scroll" />
+
+        <Button
+            android:id="@+id/stateOnOFfBtn"
+            android:background="@drawable/state_on_off_btn_selector"
+            style="@style/btnTextAnimation1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginLeft="25dp"
+            android:text="ON" />
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -61,16 +77,54 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/ll3"
         android:layout_marginTop="10dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            />
 
-        <com.tomer.fadingtextview.FadingTextView
+        <!--<com.tomer.fadingtextview.FadingTextView
             android:id="@+id/fadingtext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="45dp"
             android:padding="10dp" />
+-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll5"
+        android:layout_below="@id/ll4"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Switch
+            android:id="@+id/enableDisableBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:checked="true"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dp"
+            android:text="@string/enable_disable" />
+
+        <ImageButton
+            android:id="@+id/switchBtn"
+            android:background="@drawable/state_on_off_switch_selector"
+            style="@style/btnTextAnimation1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="end"
+            android:layout_marginLeft="25dp"
+            android:text="ON" />
+
 
     </LinearLayout>
+
+
 
     <LinearLayout
         android:id="@+id/ll2"
@@ -96,8 +150,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="40dp"
             android:layout_below="@id/animatedTxt"
-            android:background="@color/black"
-            android:text="Animinate" />
+            android:text="Open Activity" />
 
     </LinearLayout>
 
