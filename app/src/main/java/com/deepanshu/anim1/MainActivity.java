@@ -12,7 +12,10 @@ import android.transition.Fade;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
@@ -21,9 +24,12 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.tomer.fadingtextview.FadingTextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private TextView animatedTxt;
     private Button animatedBtn, openNextActivity, leftRightAnim,stateOnOFfBtn;
+    private Switch enableDisableBtn;
+    private ImageButton switchBtn;
+    private Boolean isSwitchBtnPress = true;
     private TextSwitcher leftrightTxtSwitcher;
     private ImageView alluArjunImage;
     private int index = 0;
@@ -74,7 +80,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        // fadingtext = findViewById(R.id.fadingtext);
         leftRightAnim = findViewById(R.id.leftRightAnim);
         stateOnOFfBtn = findViewById(R.id.stateOnOFfBtn);
-
+        switchBtn = findViewById(R.id.switchBtn);
+        enableDisableBtn = findViewById(R.id.enableDisableBtn);
     }
 
     private void setClicklistner() {
@@ -82,6 +89,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         openNextActivity.setOnClickListener(this);
         leftRightAnim.setOnClickListener(this);
         stateOnOFfBtn.setOnClickListener(this);
+        enableDisableBtn.setOnCheckedChangeListener(this);
+        switchBtn.setOnClickListener(this);
 
     }
 
@@ -95,8 +104,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(this, SecondActivity.class);
                 ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this,alluArjunImage, ViewCompat.getTransitionName(alluArjunImage));
                 startActivity(intent,activityOptionsCompat.toBundle());
-                break;
             // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                break;
+
             case R.id.leftRightAnim:
                 if (index == row.length - 1) {
                     index = 0;
@@ -112,6 +122,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 else
                     stateOnOFfBtn.setText("OFF");
                 break;
+            case R.id.switchBtn:
+                if(isSwitchBtnPress){
+                    switchBtn.setSelected(true);//used to maintain selected any button
+                    //switchBtn.setPressed(true);
+                    //switchBtn.setFocusable(true);
+                    isSwitchBtnPress = false;
+                }else {
+                    //switchBtn.setPressed(false);
+                    switchBtn.setSelected(false);
+                    //switchBtn.setFocusable(false);
+                    isSwitchBtnPress = true;
+                }
+                break;
         }
     }
 
@@ -119,5 +142,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onBackPressed() {
         super.onBackPressed();
         // overridePendingTransition(R.anim.slide_out_left,R.anim.slide_in_right);
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+        if(isChecked){
+            switchBtn.setEnabled(true);
+        }
+        else{
+            switchBtn.setEnabled(false);
+            switchBtn.setSelected(false);
+        }
     }
 }
