@@ -1,223 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="30dp"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:id="@+id/ll1"
-        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/animatedTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:text="Hello World!" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
         <Button
-            android:id="@+id/animatedBtn"
+            android:id="@+id/btnOpenBasicAcitvity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/animatedTxt"
-            android:layout_gravity="end"
-            android:text="Animinate blink" />
+            android:text="openBasic Activity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnImageSLiderAcitvity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="openImageSlider Activity"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnOpenViewFlipperAcitvity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="openBasic Activity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnSliderAcitvity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="open Slider Activity"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll3"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ll1"
-        android:layout_marginTop="10dp">
+        android:orientation="horizontal">
 
-        <TextSwitcher
-            android:id="@+id/leftrightTxtSwitcher"
+        <EditText
+            android:id="@+id/editTextActivityFrag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="45dp"
-            android:inAnimation="@anim/slide_in_left"
-            android:outAnimation="@anim/slide_out_right"
-            android:padding="10dp"
-            android:text="Hello World!" />
+            android:text="Activity-Frag"
+            android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/leftRightAnim"
+            android:id="@+id/btnActivityFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/animatedTxt"
-            android:layout_gravity="end"
-            android:layout_marginLeft="25dp"
-            android:text="Scroll" />
-
-        <Button
-            android:id="@+id/stateOnOFfBtn"
-            android:background="@drawable/state_on_off_btn_selector"
-            style="@style/btnTextAnimation1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginLeft="25dp"
-            android:text="ON" />
-
+            android:layout_marginStart="10dp"
+            android:stateListAnimator="@null"
+            android:text="open Fragment"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/ll4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ll3"
-        android:layout_marginTop="10dp">
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"
-            />
-
-        <!--<com.tomer.fadingtextview.FadingTextView
-            android:id="@+id/fadingtext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="45dp"
-            android:padding="10dp" />
--->
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll5"
-        android:layout_below="@id/ll4"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Switch
-            android:id="@+id/enableDisableBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="true"
-            android:checked="true"
-            android:gravity="center"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="30dp"
-            android:text="@string/enable_disable" />
-
-        <ImageButton
-            android:id="@+id/switchBtn"
-            android:background="@drawable/state_on_off_switch_selector"
-            style="@style/btnTextAnimation1"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="end"
-            android:layout_marginLeft="25dp"
-            android:text="ON" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll6"
-        android:layout_below="@+id/ll5"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:visibility="visible"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/patch9Image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
-            android:text="@string/dummy_text"
-            android:visibility="gone"
-            android:scaleType="centerCrop"
-            android:background="@drawable/chat_icon31"
-            android:transitionName="example_transition"
-            />
-
-        <ImageButton
-            android:id="@+id/verctorImageAnim"
-            android:background="@drawable/state_on_off_switch_selector"
-            style="@style/btnTextAnimation1"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="25dp"
-            android:text="ON" />
-
-
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/ll7"
-        android:layout_below="@+id/ll6"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:visibility="visible"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/revealBtn"
-            style="@style/btnTextAnimation1"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="25dp"
-            android:text="ON" />
-
-        <Button
-            android:id="@+id/resetBtn"
-            style="@style/btnTextAnimation1"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="25dp"
-            android:text="ON" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:src="@drawable/chat_icon"
-            android:id="@+id/floatingBtn"/>
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/ll2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginVertical="20dp">
-        <ImageView
-            android:id="@+id/alluArjunImage"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:fitsSystemWindows="true"
-            android:scaleType="centerCrop"
-            android:layout_marginLeft="40dp"
-            android:src="@drawable/allu"
-            android:transitionName="example_transition"
-            />
-
-        <Button
-            android:id="@+id/openNextActivity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
-            android:layout_below="@id/animatedTxt"
-            android:text="Open Activity" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

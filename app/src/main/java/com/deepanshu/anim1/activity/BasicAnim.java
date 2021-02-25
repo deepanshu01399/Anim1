@@ -1,9 +1,4 @@
-package com.deepanshu.anim1;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.view.ViewCompat;
+package com.deepanshu.anim1.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -15,7 +10,6 @@ import android.transition.Fade;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewAnimationUtils;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
@@ -25,12 +19,17 @@ import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.ViewCompat;
+
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.deepanshu.anim1.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.tomer.fadingtextview.FadingTextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+public class BasicAnim extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private TextView animatedTxt;
     private Button animatedBtn, openNextActivity, leftRightAnim,stateOnOFfBtn,revealBtn,resetBtn;
     private Switch enableDisableBtn;
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.basic_anim);
 
         //if we not want to animinate the blink effect on the header
         Fade fade  = new Fade();
@@ -69,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         leftrightTxtSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                textview = new TextView(MainActivity.this);
+                textview = new TextView(BasicAnim.this);
                 textview.setTextColor(Color.BLACK);
                 textview.setTextSize(30);
                 textview.setGravity(Gravity.CENTER_HORIZONTAL);
@@ -127,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.openNextActivity:
                 Intent intent = new Intent(this, SecondActivity.class);
-                ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this,alluArjunImage, ViewCompat.getTransitionName(alluArjunImage));
+                ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(BasicAnim.this,alluArjunImage, ViewCompat.getTransitionName(alluArjunImage));
                 startActivity(intent,activityOptionsCompat.toBundle());
             // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
