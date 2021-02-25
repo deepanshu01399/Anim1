@@ -124,6 +124,72 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/ll6"
+        android:layout_below="@+id/ll5"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:visibility="visible"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/patch9Image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:text="@string/dummy_text"
+            android:visibility="gone"
+            android:scaleType="centerCrop"
+            android:background="@drawable/chat_icon31"
+            android:transitionName="example_transition"
+            />
+
+        <ImageButton
+            android:id="@+id/verctorImageAnim"
+            android:background="@drawable/state_on_off_switch_selector"
+            style="@style/btnTextAnimation1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="25dp"
+            android:text="ON" />
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll7"
+        android:layout_below="@+id/ll6"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:visibility="visible"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/revealBtn"
+            style="@style/btnTextAnimation1"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:text="ON" />
+
+        <Button
+            android:id="@+id/resetBtn"
+            style="@style/btnTextAnimation1"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:text="ON" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/chat_icon"
+            android:id="@+id/floatingBtn"/>
+
+
+    </LinearLayout>
 
 
     <LinearLayout

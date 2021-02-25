@@ -5,12 +5,17 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.view.ViewCompat;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.transition.Fade;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewAnimationUtils;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
@@ -22,21 +27,24 @@ import android.widget.ViewSwitcher;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.tomer.fadingtextview.FadingTextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private TextView animatedTxt;
-    private Button animatedBtn, openNextActivity, leftRightAnim,stateOnOFfBtn;
+    private Button animatedBtn, openNextActivity, leftRightAnim,stateOnOFfBtn,revealBtn,resetBtn;
     private Switch enableDisableBtn;
     private ImageButton switchBtn;
     private Boolean isSwitchBtnPress = true;
     private TextSwitcher leftrightTxtSwitcher;
-    private ImageView alluArjunImage;
+    private ImageView alluArjunImage,verctorImageAnim;
     private int index = 0;
     private TextView textview;
     private FadingTextView fadingtext;
     private String[] row = {"ONE", "TWO", "THREE", "FOUR", "FIVE"};
     private int i =2;
+    private AnimationDrawable animationDrawable;
+    private FloatingActionButton floatingBtn;
 
 
     @Override
@@ -52,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fade.excludeTarget(android.R.id.navigationBarBackground,true);
         getWindow().setEnterTransition(fade);
         getWindow().setExitTransition(fade);
+
+       // patch9 images are used to make the icons/images are of same size or in same ration either the text/content area increase..
 
         initialisation();
         setClicklistner();
@@ -82,6 +92,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stateOnOFfBtn = findViewById(R.id.stateOnOFfBtn);
         switchBtn = findViewById(R.id.switchBtn);
         enableDisableBtn = findViewById(R.id.enableDisableBtn);
+        verctorImageAnim = findViewById(R.id.verctorImageAnim);
+        verctorImageAnim.setBackgroundResource(R.drawable.animation);
+        animationDrawable = (AnimationDrawable) verctorImageAnim.getBackground();//her upto this animationdrawale in not attach to windo
+        revealBtn = findViewById(R.id.revealBtn);
+        resetBtn = findViewById(R.id.resetBtn);
+        floatingBtn = findViewById(R.id.floatingBtn);
+
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        animationDrawable.start();
     }
 
     private void setClicklistner() {
@@ -91,6 +114,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stateOnOFfBtn.setOnClickListener(this);
         enableDisableBtn.setOnCheckedChangeListener(this);
         switchBtn.setOnClickListener(this);
+        revealBtn.setOnClickListener(this);
+        resetBtn.setOnClickListener(this);
 
     }
 
@@ -135,7 +160,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     isSwitchBtnPress = true;
                 }
                 break;
+            case R.id.revealBtn:
+                revealMethod();
+                break;
+            case R.id.resetBtn:
+                resetMethod();
+                break;
         }
+    }
+
+    private void resetMethod() {
+        View view = findViewById(R.id.floatingBtn);
+        int width= view.getWidth() / 2;
+        int height = view.getHeight() / 2;
+        float initalRadius = (float) Math.hypot(width,height);
+        Animator animator = ViewAnimationUtils.createCircularReveal(view,width,height,initalRadius,0);
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                view.setVisibility(View.INVISIBLE);
+
+            }
+        });
+        animator.start();
+
+    }
+
+    private void revealMethod() {
+        View view = findViewById(R.id.floatingBtn);
+        int width= view.getWidth() / 2;
+        int height = view.getHeight() / 2;
+        float finalRadius = (float) Math.hypot(width,height);
+        Animator animator = ViewAnimationUtils.createCircularReveal(view,width,height,0,finalRadius);
+        view.setVisibility(View.VISIBLE);
+        animator.start();
+
     }
 
     @Override
