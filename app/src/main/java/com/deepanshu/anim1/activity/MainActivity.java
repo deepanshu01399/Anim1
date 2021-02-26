@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnOpenBasicAcitvity, btnImageSLiderAcitvity, btnOpenViewFlipperAcitvity, btnSliderAcitvity, btnActivityFragment;
     private EditText editTextActivityFrag;
     private Intent intent = null;
+    private Button btnBottomSheet;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
     private void initView() {
         btnOpenBasicAcitvity = findViewById(R.id.btnOpenBasicAcitvity);
         btnImageSLiderAcitvity = findViewById(R.id.btnImageSLiderAcitvity);
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSliderAcitvity = findViewById(R.id.btnSliderAcitvity);
         editTextActivityFrag = findViewById(R.id.editTextActivityFrag);
         btnActivityFragment = findViewById(R.id.btnActivityFragment);
+        btnBottomSheet = findViewById(R.id.btnBottomSheet);
+        //btnCollapse = findViewById(R.id.btnColapseView);
 
     }
 
@@ -46,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnImageSLiderAcitvity.setOnClickListener(this);
         btnSliderAcitvity.setOnClickListener(this);
         btnActivityFragment.setOnClickListener(this);
+        btnBottomSheet.setOnClickListener(this);
+        //btnExpandView.setOnClickListener(this);
 
     }
 
@@ -75,7 +80,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnActivityFragment:
                 String edittext = getEditText();
                 openFragment(edittext);
-
+                break;
+            case R.id.btnBottomSheet:
+                intent = new Intent(this, BottomSheetActivity.class);
+                startActivity(intent);
                 break;
 
         }
