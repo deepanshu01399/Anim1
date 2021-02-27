@@ -1,9 +1,12 @@
 package com.deepanshu.anim1.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,9 +16,10 @@ import com.deepanshu.anim1.R;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
-public class BottomSheetActivity extends AppCompatActivity {
+public class BottomSheetActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnBottomSheet, btn_bottom_sheet_dialog, btn_bottom_sheet_dialog_fragment;//,btnCollapse;
     private LinearLayout bottom_sheeet;
+    private TextView txt_bottom_sheet_dialog;
     BottomSheetBehavior sheetBehavior;
 
 
@@ -27,7 +31,40 @@ public class BottomSheetActivity extends AppCompatActivity {
         bottom_sheeet = findViewById(R.id.bottom_sheeet);
         btnBottomSheet = findViewById(R.id.btn_bottom_sheet);
         btn_bottom_sheet_dialog = findViewById(R.id.btn_bottom_sheet_dialog);
+        txt_bottom_sheet_dialog = findViewById(R.id.txt_bottom_sheet_dialog);
+
         btn_bottom_sheet_dialog_fragment = findViewById(R.id.btn_bottom_sheet_dialog_fragment);
+
+        btnBottomSheet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toggleBottomSheet();
+            }
+        });
+
+        btn_bottom_sheet_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                View view1 = getLayoutInflater().inflate(R.layout.persistent_bottom_sheet, null);
+                BottomSheetDialog dialog = new BottomSheetDialog(BottomSheetActivity.this);
+                Button btnTextAnimation1 = view1.findViewById(R.id.btnProcedPayment);
+                TextView totalBill = view1.findViewById(R.id.txttotalBill);
+                totalBill.setText(getBottomDialogTxt());
+                btnTextAnimation1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(getApplicationContext(),"btn pressed",Toast.LENGTH_LONG).show();
+                        //totalBill.setText(Integer.parseInt(totalBill.getText().toString())+1);
+                        txt_bottom_sheet_dialog.setText(Integer.parseInt(totalBill.getText().toString())+1);
+
+                    }
+                });
+                dialog.setContentView(view1);
+                dialog.show();
+
+            }
+        });
+
         btn_bottom_sheet_dialog_fragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,23 +74,6 @@ public class BottomSheetActivity extends AppCompatActivity {
             }
         });
 
-        btn_bottom_sheet_dialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                View view1 = getLayoutInflater().inflate(R.layout.persistent_bottom_sheet, null);
-                BottomSheetDialog dialog = new BottomSheetDialog(BottomSheetActivity.this);
-                dialog.setContentView(view1);
-                dialog.show();
-
-            }
-        });
-
-        btnBottomSheet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toggleBottomSheet();
-            }
-        });
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -97,4 +117,14 @@ public class BottomSheetActivity extends AppCompatActivity {
         }
     }
 
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+          }
+    }
+
+     private String getBottomDialogTxt(){
+        return txt_bottom_sheet_dialog.getText().toString();
+    }
 }

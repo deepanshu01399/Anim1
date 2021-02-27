@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".activity.DodgeEdgesActvity">
+
+    <LinearLayout
+        android:id="@+id/gameLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/floor">
+
+    <ImageView
+
+        android:id="@+id/spinImage"
+        android:layout_width="190dp"
+        android:layout_gravity="center_vertical"
+        android:layout_height="150dp"
+        android:src="@drawable/bottle"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnOpenGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Game"
+        android:layout_gravity="bottom"
+        app:layout_dodgeInsetEdges="bottom"
+        android:textAllCaps="false" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/chat_icon31"
+        android:background="@color/white"
+        android:layout_gravity="end|bottom"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

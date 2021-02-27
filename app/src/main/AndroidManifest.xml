@@ -21,6 +21,7 @@
         <activity android:name=".activity.ViewFlipper" />
         <activity android:name=".activity.ImageSLiderMover" />
         <activity android:name=".activity.BottomSheetActivity" />
+        <activity android:name=".activity.DodgeEdgesActvity" />
 
         <activity
             android:name=".activity.SliderActivity"

@@ -13,12 +13,13 @@ import android.widget.EditText;
 
 import com.deepanshu.anim1.R;
 import com.deepanshu.anim1.fragment.SimpleFragment;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, SimpleFragment.SendBackDataToActivity {
     private Button btnOpenBasicAcitvity, btnImageSLiderAcitvity, btnOpenViewFlipperAcitvity, btnSliderAcitvity, btnActivityFragment;
     private EditText editTextActivityFrag;
     private Intent intent = null;
-    private Button btnBottomSheet,btnModalBottomSheet;
+    private Button btnBottomSheet,btnModalBottomSheet,btnDodgeEdges,btnOpenPlaceholderAnim;
 
 
     @Override
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnActivityFragment = findViewById(R.id.btnActivityFragment);
         btnBottomSheet = findViewById(R.id.btnBottomSheet);
         btnModalBottomSheet = findViewById(R.id.btnBottomSheet);
+        btnDodgeEdges = findViewById(R.id.btnDodgeEdges);
+        btnOpenPlaceholderAnim = findViewById(R.id.btnOpenPlaceholderAnim);
 
     }
 
@@ -51,7 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnActivityFragment.setOnClickListener(this);
         btnBottomSheet.setOnClickListener(this);
         btnModalBottomSheet.setOnClickListener(this);
-
+        btnDodgeEdges.setOnClickListener(this);
+        btnOpenPlaceholderAnim.setOnClickListener(this);
     }
 
 
@@ -85,6 +89,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(this, BottomSheetActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.btnDodgeEdges:
+                intent = new Intent(this, DodgeEdgesActvity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnOpenPlaceholderAnim:
+                intent = new Intent(this, DodgeEdgesActvity.class);
+                startActivity(intent);
+                break;
+
 
         }
     }
