@@ -96,21 +96,21 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-
         <Button
             android:id="@+id/btnBottomSheet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:text="Bottom Sheet"
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/btnColapseView"
+            android:id="@+id/btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Colapse"
+            android:text="Persistent Bottom Sheet"
             android:textAllCaps="false" />
+
 
     </LinearLayout>
 

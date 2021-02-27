@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnOpenBasicAcitvity, btnImageSLiderAcitvity, btnOpenViewFlipperAcitvity, btnSliderAcitvity, btnActivityFragment;
     private EditText editTextActivityFrag;
     private Intent intent = null;
-    private Button btnBottomSheet;
+    private Button btnBottomSheet,btnModalBottomSheet;
 
 
     @Override
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextActivityFrag = findViewById(R.id.editTextActivityFrag);
         btnActivityFragment = findViewById(R.id.btnActivityFragment);
         btnBottomSheet = findViewById(R.id.btnBottomSheet);
-        //btnCollapse = findViewById(R.id.btnColapseView);
+        btnModalBottomSheet = findViewById(R.id.btnBottomSheet);
 
     }
 
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSliderAcitvity.setOnClickListener(this);
         btnActivityFragment.setOnClickListener(this);
         btnBottomSheet.setOnClickListener(this);
-        //btnExpandView.setOnClickListener(this);
+        btnModalBottomSheet.setOnClickListener(this);
 
     }
 
