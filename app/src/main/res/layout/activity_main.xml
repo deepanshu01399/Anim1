@@ -127,14 +127,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="Opne PlaceHolder Animation"
+            android:text="Icon PlaceHolder Animation"
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/btn"
+            android:id="@+id/btnOpenImageRoatateAnim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DodgeEdges"
+            android:text="RoatateHolder Anim"
             android:textAllCaps="false" />
 
 

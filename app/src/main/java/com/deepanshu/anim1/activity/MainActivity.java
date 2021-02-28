@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnOpenBasicAcitvity, btnImageSLiderAcitvity, btnOpenViewFlipperAcitvity, btnSliderAcitvity, btnActivityFragment;
     private EditText editTextActivityFrag;
     private Intent intent = null;
-    private Button btnBottomSheet,btnModalBottomSheet,btnDodgeEdges,btnOpenPlaceholderAnim;
+    private Button btnBottomSheet,btnModalBottomSheet,btnDodgeEdges,btnOpenPlaceholderAnim,btnOpenImageRoatateAnim;
 
 
     @Override
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnModalBottomSheet = findViewById(R.id.btnBottomSheet);
         btnDodgeEdges = findViewById(R.id.btnDodgeEdges);
         btnOpenPlaceholderAnim = findViewById(R.id.btnOpenPlaceholderAnim);
+        btnOpenImageRoatateAnim = findViewById(R.id.btnOpenImageRoatateAnim);
 
     }
 
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnModalBottomSheet.setOnClickListener(this);
         btnDodgeEdges.setOnClickListener(this);
         btnOpenPlaceholderAnim.setOnClickListener(this);
+        btnOpenImageRoatateAnim.setOnClickListener(this);
     }
 
 
@@ -94,10 +96,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btnOpenPlaceholderAnim:
-                intent = new Intent(this, DodgeEdgesActvity.class);
+                intent = new Intent(this, PlaceHolderAnimActvity.class);
                 startActivity(intent);
                 break;
-
+            case R.id.btnOpenImageRoatateAnim:
+                intent = new Intent(this, ImageHolderAnimActvity.class);
+                startActivity(intent);
+                break;
 
         }
     }
