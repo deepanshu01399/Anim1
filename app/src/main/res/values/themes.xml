@@ -34,5 +34,11 @@
     <style name="btnTextAnimation1" >
         <item name="android:textColor">@drawable/state_on_off_textcolor</item>
     </style>
+    <style name="ratingstyle" >
+        <item name="android:colorControlNormal">@color/white</item>
+        <item name="android:colorActivatedHighlight">@color/orange</item>
+        <item name="android:colorControlActivated">@color/orange</item>
+
+    </style>
 
 </resources>

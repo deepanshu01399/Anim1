@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Anim1">
+        <activity android:name=".activity.GetStartedAnim"></activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +25,8 @@
         <activity android:name=".activity.DodgeEdgesActvity" />
         <activity android:name=".activity.PlaceHolderAnimActvity" />
         <activity android:name=".activity.ImageHolderAnimActvity" />
+        <activity android:name=".activity.DoubleClickActivity" />
+        <activity android:name=".activity.RatedAnimActivity" />
 
         <activity
             android:name=".activity.SliderActivity"

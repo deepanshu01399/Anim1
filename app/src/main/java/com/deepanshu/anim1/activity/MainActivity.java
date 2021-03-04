@@ -6,20 +6,29 @@ import androidx.fragment.app.FragmentTransaction;
 
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.deepanshu.anim1.R;
 import com.deepanshu.anim1.fragment.SimpleFragment;
 import com.google.android.material.snackbar.Snackbar;
+import com.like.LikeButton;
+import com.like.OnLikeListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, SimpleFragment.SendBackDataToActivity {
-    private Button btnOpenBasicAcitvity, btnImageSLiderAcitvity, btnOpenViewFlipperAcitvity, btnSliderAcitvity, btnActivityFragment;
+    private Button btnOpenBasicAcitvity, btnImageSLiderAcitvity, btnOpenViewFlipperAcitvity, btnSliderAcitvity, btnActivityFragment,btnGetStartedAnim;
     private EditText editTextActivityFrag;
     private Intent intent = null;
-    private Button btnBottomSheet,btnModalBottomSheet,btnDodgeEdges,btnOpenPlaceholderAnim,btnOpenImageRoatateAnim;
+    private Button btnBottomSheet,btnModalBottomSheet,btnRatedANim,btnDodgeEdges,btnOpenPlaceholderAnim,btnOpenImageRoatateAnim,btnGestureAnim;
+    private LikeButton likeButton;
+    private ImageView imageView;
+    private static  String TAG = "MainActivity";
+    private AnimationDrawable animationDrawable;
 
 
     @Override
@@ -43,6 +52,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDodgeEdges = findViewById(R.id.btnDodgeEdges);
         btnOpenPlaceholderAnim = findViewById(R.id.btnOpenPlaceholderAnim);
         btnOpenImageRoatateAnim = findViewById(R.id.btnOpenImageRoatateAnim);
+        likeButton = findViewById(R.id.likeButton);
+        btnGestureAnim = findViewById(R.id.btnGestureAnim);
+        imageView = findViewById(R.id.imageView);
+        btnGetStartedAnim = findViewById(R.id.btnGetStartedAnim);
+        animationDrawable = (AnimationDrawable) imageView.getBackground();
+        btnRatedANim = findViewById(R.id.btnRatedANim);
 
     }
 
@@ -58,6 +73,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDodgeEdges.setOnClickListener(this);
         btnOpenPlaceholderAnim.setOnClickListener(this);
         btnOpenImageRoatateAnim.setOnClickListener(this);
+        btnGestureAnim.setOnClickListener(this);
+        imageView.setOnClickListener(this);
+        btnGetStartedAnim.setOnClickListener(this);
+        btnRatedANim.setOnClickListener(this);
+        likeButton.setOnLikeListener(new OnLikeListener() {
+            @Override
+            public void liked(LikeButton likeButton) {
+                Toast.makeText(MainActivity.this,"Liked",Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void unLiked(LikeButton likeButton) {
+                Toast.makeText(MainActivity.this,"UnLiked",Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
 
 
@@ -103,6 +134,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(this, ImageHolderAnimActvity.class);
                 startActivity(intent);
                 break;
+            case R.id.btnGestureAnim:
+                intent = new Intent(this, DoubleClickActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.imageView:
+                animationDrawable.start();
+                break;
+            case R.id.btnGetStartedAnim:
+                intent = new Intent(this, GetStartedAnim.class);
+                startActivity(intent);
+
+                break;
+            case R.id.btnRatedANim:
+                intent = new Intent(this, RatedAnimActivity.class);
+                startActivity(intent);
+                break;
+
 
         }
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -135,6 +136,118 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="RoatateHolder Anim"
+            android:textAllCaps="false" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.like.LikeButton
+            android:id="@+id/likeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            app:anim_scale_factor="4"
+            app:circle_end_color="@color/blue"
+            app:circle_start_color="@color/blue"
+            app:dots_primary_color="@color/blue"
+            app:dots_secondary_color="@color/blue"
+            app:icon_size="15dp"
+            app:icon_type="Star"
+            app:is_enabled="true"
+            app:like_drawable="@drawable/thumb_on"
+            app:liked="false"
+            app:unlike_drawable="@drawable/thumb_off" />
+
+        <com.like.LikeButton
+            android:id="@+id/heartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:anim_scale_factor="4"
+            app:circle_end_color="@color/red"
+            app:circle_start_color="@color/red"
+            app:dots_primary_color="@color/red"
+            app:dots_secondary_color="@color/red"
+            app:icon_size="10dp"
+            app:icon_type="heart"
+            app:is_enabled="true"
+            app:liked="false" />
+
+        <CheckBox
+            android:id="@+id/likeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_like_icon"
+            android:button="@null"
+            android:checked="false"
+            android:stateListAnimator="@anim/scale" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/animation_drawable"
+            android:button="@null"
+            android:layout_marginLeft="20dp"
+            android:checked="false"
+            android:stateListAnimator="@anim/scale" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnGestureAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Gesture Animation"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnGetStartedAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Started Anim"
+            android:textAllCaps="false" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnRatedANim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Rate Animation"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anim"
             android:textAllCaps="false" />
 
 

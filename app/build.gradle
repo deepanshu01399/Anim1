@@ -43,6 +43,7 @@ dependencies {
     implementation 'com.daimajia.androidanimations:library:2.4@aar'//for text animation
     implementation 'com.tomer:fadingtextview:2.5'//to fading text effect (show or hide the icons/images with animation
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
+    implementation 'com.github.jd-alexander:LikeButton:0.2.3'
     implementation 'com.r0adkll:slidableactivity:2.1.0'//used to slide the activity
 
 
