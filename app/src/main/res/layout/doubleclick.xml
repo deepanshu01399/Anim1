@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.SliderActivity">
+
+    <ImageView
+        android:id="@+id/alluArjunImage"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:src="@drawable/allu"
+        android:text="Unlock Slider" />
+
+    <com.like.LikeButton
+        android:id="@+id/heartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:anim_scale_factor="4"
+        android:visibility="gone"
+        app:circle_end_color="@color/red"
+        app:circle_start_color="@color/red"
+        app:dots_primary_color="@color/red"
+        app:dots_secondary_color="@color/red"
+        app:icon_size="30dp"
+        app:icon_type="heart"
+        app:is_enabled="true"
+        app:liked="false" />
+
+
+</RelativeLayout>

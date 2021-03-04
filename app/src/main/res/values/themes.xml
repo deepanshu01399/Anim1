@@ -17,6 +17,12 @@
         <item name="android:windowContentTransitions">true</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.Anim1.SlidrAnimation">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
     <style name="customActivityAnimation" parent="android:Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
         <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
@@ -28,4 +34,11 @@
     <style name="btnTextAnimation1" >
         <item name="android:textColor">@drawable/state_on_off_textcolor</item>
     </style>
+    <style name="ratingstyle" >
+        <item name="android:colorControlNormal">@color/white</item>
+        <item name="android:colorActivatedHighlight">@color/orange</item>
+        <item name="android:colorControlActivated">@color/orange</item>
+
+    </style>
+
 </resources>

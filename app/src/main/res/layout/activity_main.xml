@@ -1,73 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="30dp"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:id="@+id/ll1"
-        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/animatedTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:text="Hello World!" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
         <Button
-            android:id="@+id/animatedBtn"
+            android:id="@+id/btnOpenBasicAcitvity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/animatedTxt"
-            android:layout_gravity="end"
-            android:text="Animinate blink" />
+            android:text="openBasic Activity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnImageSLiderAcitvity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="openImageSlider Activity"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnOpenViewFlipperAcitvity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="openBasic Activity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnSliderAcitvity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="open Slider Activity"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll3"
         android:layout_width="match_parent"
-        android:gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ll1"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
-        <TextSwitcher
-            android:id="@+id/leftrightTxtSwitcher"
+        <EditText
+            android:id="@+id/editTextActivityFrag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="45dp"
-            android:inAnimation="@anim/slide_in_left"
-            android:outAnimation="@anim/slide_out_right"
-            android:padding="10dp"
-            android:text="Hello World!" />
+            android:text="Activity-Frag"
+            android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/leftRightAnim"
+            android:id="@+id/btnActivityFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/animatedTxt"
-            android:layout_gravity="end"
-            android:layout_marginLeft="25dp"
-            android:text="Scroll" />
-
-        <Button
-            android:id="@+id/stateOnOFfBtn"
-            android:background="@drawable/state_on_off_btn_selector"
-            style="@style/btnTextAnimation1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginLeft="25dp"
-            android:text="ON" />
-
+            android:layout_marginStart="10dp"
+            android:stateListAnimator="@null"
+            android:text="open Fragment"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 
@@ -75,83 +93,173 @@
         android:id="@+id/ll4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ll3"
-        android:layout_marginTop="10dp">
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"
-            />
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <!--<com.tomer.fadingtextview.FadingTextView
-            android:id="@+id/fadingtext"
+        <Button
+            android:id="@+id/btnBottomSheet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="45dp"
-            android:padding="10dp" />
--->
+            android:layout_marginStart="10dp"
+            android:text="Bottom Sheet"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnDodgeEdges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DodgeEdges"
+            android:textAllCaps="false" />
+
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll5"
-        android:layout_below="@id/ll4"
-        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <Switch
-            android:id="@+id/enableDisableBtn"
+        <Button
+            android:id="@+id/btnOpenPlaceholderAnim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:enabled="true"
-            android:checked="true"
-            android:gravity="center"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="30dp"
-            android:text="@string/enable_disable" />
+            android:layout_marginHorizontal="10dp"
+            android:text="Icon PlaceHolder Animation"
+            android:textAllCaps="false" />
 
-        <ImageButton
-            android:id="@+id/switchBtn"
-            android:background="@drawable/state_on_off_switch_selector"
-            style="@style/btnTextAnimation1"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="end"
-            android:layout_marginLeft="25dp"
-            android:text="ON" />
+        <Button
+            android:id="@+id/btnOpenImageRoatateAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RoatateHolder Anim"
+            android:textAllCaps="false" />
 
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/ll7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.like.LikeButton
+            android:id="@+id/likeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            app:anim_scale_factor="4"
+            app:circle_end_color="@color/blue"
+            app:circle_start_color="@color/blue"
+            app:dots_primary_color="@color/blue"
+            app:dots_secondary_color="@color/blue"
+            app:icon_size="15dp"
+            app:icon_type="Star"
+            app:is_enabled="true"
+            app:like_drawable="@drawable/thumb_on"
+            app:liked="false"
+            app:unlike_drawable="@drawable/thumb_off" />
+
+        <com.like.LikeButton
+            android:id="@+id/heartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:anim_scale_factor="4"
+            app:circle_end_color="@color/red"
+            app:circle_start_color="@color/red"
+            app:dots_primary_color="@color/red"
+            app:dots_secondary_color="@color/red"
+            app:icon_size="10dp"
+            app:icon_type="heart"
+            app:is_enabled="true"
+            app:liked="false" />
+
+        <CheckBox
+            android:id="@+id/likeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_like_icon"
+            android:button="@null"
+            android:checked="false"
+            android:stateListAnimator="@anim/scale" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/animation_drawable"
+            android:button="@null"
+            android:layout_marginLeft="20dp"
+            android:checked="false"
+            android:stateListAnimator="@anim/scale" />
+        <ImageView
+            android:id="@+id/imageViewMenu"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:layout_marginLeft="20dp"
+            android:checked="false"
+            android:stateListAnimator="@anim/scale" />
+
+    </LinearLayout>
 
 
     <LinearLayout
-        android:id="@+id/ll2"
+        android:id="@+id/ll8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginVertical="20dp">
-        <ImageView
-            android:id="@+id/alluArjunImage"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:fitsSystemWindows="true"
-            android:scaleType="centerCrop"
-            android:layout_marginLeft="40dp"
-            android:src="@drawable/allu"
-            android:transitionName="example_transition"
-            />
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <Button
-            android:id="@+id/openNextActivity"
+            android:id="@+id/btnGestureAnim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
-            android:layout_below="@id/animatedTxt"
-            android:text="Open Activity" />
+            android:layout_marginHorizontal="10dp"
+            android:text="Gesture Animation"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnGetStartedAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Started Anim"
+            android:textAllCaps="false" />
+
 
     </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ll9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnRatedANim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Rate Animation"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anim"
+            android:textAllCaps="false" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
