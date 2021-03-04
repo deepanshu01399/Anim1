@@ -192,17 +192,18 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/animation_drawable"
             android:button="@null"
-            android:layout_marginLeft="20dp"
             android:checked="false"
             android:stateListAnimator="@anim/scale" />
+
         <ImageView
             android:id="@+id/imageViewMenu"
             android:layout_width="40dp"
             android:layout_height="50dp"
-            android:button="@null"
             android:layout_marginLeft="20dp"
+            android:button="@null"
             android:checked="false"
             android:stateListAnimator="@anim/scale" />
 
