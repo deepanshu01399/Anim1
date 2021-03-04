@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 
 import android.content.Intent;
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -26,9 +27,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Intent intent = null;
     private Button btnBottomSheet,btnModalBottomSheet,btnRatedANim,btnDodgeEdges,btnOpenPlaceholderAnim,btnOpenImageRoatateAnim,btnGestureAnim;
     private LikeButton likeButton;
-    private ImageView imageView;
+    private ImageView imageView,imageViewMenu;
     private static  String TAG = "MainActivity";
     private AnimationDrawable animationDrawable;
+    AnimatedVectorDrawable drawable;
 
 
     @Override
@@ -58,6 +60,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnGetStartedAnim = findViewById(R.id.btnGetStartedAnim);
         animationDrawable = (AnimationDrawable) imageView.getBackground();
         btnRatedANim = findViewById(R.id.btnRatedANim);
+        imageViewMenu = findViewById(R.id.imageViewMenu);
+        drawable= (AnimatedVectorDrawable) getResources().getDrawable(R.drawable.ic_menu_animatable);
+        imageViewMenu.setImageDrawable(drawable);
 
     }
 
@@ -77,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imageView.setOnClickListener(this);
         btnGetStartedAnim.setOnClickListener(this);
         btnRatedANim.setOnClickListener(this);
+        imageViewMenu.setOnClickListener(this);
         likeButton.setOnLikeListener(new OnLikeListener() {
             @Override
             public void liked(LikeButton likeButton) {
@@ -89,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+
+
     }
 
 
@@ -141,6 +149,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.imageView:
                 animationDrawable.start();
                 break;
+            case R.id.imageViewMenu:
+                drawable.start();
+                break;
+
             case R.id.btnGetStartedAnim:
                 intent = new Intent(this, GetStartedAnim.class);
                 startActivity(intent);

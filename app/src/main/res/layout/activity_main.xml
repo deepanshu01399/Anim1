@@ -197,6 +197,14 @@
             android:layout_marginLeft="20dp"
             android:checked="false"
             android:stateListAnimator="@anim/scale" />
+        <ImageView
+            android:id="@+id/imageViewMenu"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:layout_marginLeft="20dp"
+            android:checked="false"
+            android:stateListAnimator="@anim/scale" />
 
     </LinearLayout>
 
