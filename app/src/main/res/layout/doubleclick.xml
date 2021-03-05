@@ -17,21 +17,21 @@
         android:src="@drawable/allu"
         android:text="Unlock Slider" />
 
-    <com.like.LikeButton
-        android:id="@+id/heartButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        app:anim_scale_factor="4"
-        android:visibility="gone"
-        app:circle_end_color="@color/red"
-        app:circle_start_color="@color/red"
-        app:dots_primary_color="@color/red"
-        app:dots_secondary_color="@color/red"
-        app:icon_size="30dp"
-        app:icon_type="heart"
-        app:is_enabled="true"
-        app:liked="false" />
+<!--    <com.like.LikeButton-->
+<!--        android:id="@+id/heartButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        app:anim_scale_factor="4"-->
+<!--        android:visibility="gone"-->
+<!--        app:circle_end_color="@color/red"-->
+<!--        app:circle_start_color="@color/red"-->
+<!--        app:dots_primary_color="@color/red"-->
+<!--        app:dots_secondary_color="@color/red"-->
+<!--        app:icon_size="30dp"-->
+<!--        app:icon_type="heart"-->
+<!--        app:is_enabled="true"-->
+<!--        app:liked="false" />-->
 
 
 </RelativeLayout>

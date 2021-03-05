@@ -8,29 +8,30 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.deepanshu.anim1.R;
 import com.deepanshu.anim1.fragment.SimpleFragment;
-import com.google.android.material.snackbar.Snackbar;
-import com.like.LikeButton;
-import com.like.OnLikeListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, SimpleFragment.SendBackDataToActivity {
     private Button btnOpenBasicAcitvity, btnImageSLiderAcitvity, btnOpenViewFlipperAcitvity, btnSliderAcitvity, btnActivityFragment,btnGetStartedAnim;
     private EditText editTextActivityFrag;
     private Intent intent = null;
     private Button btnBottomSheet,btnModalBottomSheet,btnRatedANim,btnDodgeEdges,btnOpenPlaceholderAnim,btnOpenImageRoatateAnim,btnGestureAnim;
-    private LikeButton likeButton;
+   // private LikeButton likeButton;
     private ImageView imageView,imageViewMenu;
     private static  String TAG = "MainActivity";
     private AnimationDrawable animationDrawable;
-    AnimatedVectorDrawable drawable;
+    private AnimatedVectorDrawable animatedVectorDrawable;
+    private Drawable settingAnimDrawable;
+    private CheckBox imageViewSetting;
 
 
     @Override
@@ -54,15 +55,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDodgeEdges = findViewById(R.id.btnDodgeEdges);
         btnOpenPlaceholderAnim = findViewById(R.id.btnOpenPlaceholderAnim);
         btnOpenImageRoatateAnim = findViewById(R.id.btnOpenImageRoatateAnim);
-        likeButton = findViewById(R.id.likeButton);
+        //likeButton = findViewById(R.id.likeButton);
         btnGestureAnim = findViewById(R.id.btnGestureAnim);
         imageView = findViewById(R.id.imageView);
         btnGetStartedAnim = findViewById(R.id.btnGetStartedAnim);
         animationDrawable = (AnimationDrawable) imageView.getBackground();
         btnRatedANim = findViewById(R.id.btnRatedANim);
         imageViewMenu = findViewById(R.id.imageViewMenu);
-        drawable= (AnimatedVectorDrawable) getResources().getDrawable(R.drawable.ic_menu_animatable);
-        imageViewMenu.setImageDrawable(drawable);
+        animatedVectorDrawable = (AnimatedVectorDrawable) getResources().getDrawable(R.drawable.ic_menu_animatable);
+        imageViewMenu.setImageDrawable(animatedVectorDrawable);
+        imageViewSetting = findViewById(R.id.imageViewSetting);
+        settingAnimDrawable= getResources().getDrawable(R.drawable.anim_setting_drawable);
+        imageViewSetting.setBackgroundResource(R.drawable.anim_setting_drawable);
 
     }
 
@@ -83,6 +87,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnGetStartedAnim.setOnClickListener(this);
         btnRatedANim.setOnClickListener(this);
         imageViewMenu.setOnClickListener(this);
+        imageViewSetting.setOnClickListener(this);
+/*
         likeButton.setOnLikeListener(new OnLikeListener() {
             @Override
             public void liked(LikeButton likeButton) {
@@ -95,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+*/
 
 
     }
@@ -150,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 animationDrawable.start();
                 break;
             case R.id.imageViewMenu:
-                drawable.start();
+                animatedVectorDrawable.start();
                 break;
 
             case R.id.btnGetStartedAnim:
@@ -161,6 +168,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnRatedANim:
                 intent = new Intent(this, RatedAnimActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.imageViewSetting:
+                //Toast.makeText(this, "setting", Toast.LENGTH_SHORT).show();
+                imageViewSetting.setBackgroundResource(R.drawable.anim_setting_drawable);
                 break;
 
 

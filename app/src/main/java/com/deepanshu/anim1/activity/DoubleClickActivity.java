@@ -9,12 +9,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.deepanshu.anim1.R;
-import com.like.LikeButton;
 
 public class DoubleClickActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView alluArjunImage;
     private Boolean doubleTap = false;
-    private LikeButton heartButton;
+    //private LikeButton heartButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +26,8 @@ public class DoubleClickActivity extends AppCompatActivity implements View.OnCli
 
     private void initView() {
         alluArjunImage = findViewById(R.id.alluArjunImage);
-        heartButton = findViewById(R.id.heartButton);
-        heartButton.setEnabled(false);
+//        heartButton = findViewById(R.id.heartButton);
+//        heartButton.setEnabled(false);
 
     }
 
@@ -43,7 +42,8 @@ public class DoubleClickActivity extends AppCompatActivity implements View.OnCli
             case R.id.alluArjunImage:
                Boolean isDoubleClick =  checkDoubleClickOrNot();
                if(isDoubleClick){
-                   heartButton.setEnabled(true);
+                   Toast.makeText(this,"Double click : "+isDoubleClick,Toast.LENGTH_LONG).show();
+                   /*heartButton.setEnabled(true);
                   Boolean isheartBtnLiked =  heartButton.isLiked();
                    heartButton.setLiked(!isheartBtnLiked);
                    if(heartButton.isLiked()) {
@@ -57,7 +57,7 @@ public class DoubleClickActivity extends AppCompatActivity implements View.OnCli
                    }
                    else{
                        heartButton.setVisibility(View.GONE);
-                   }
+                   }*/
                }
                 break;
         }
