@@ -213,6 +213,22 @@
             android:background="@drawable/anim_setting_drawable"
             android:layout_marginLeft="20dp" />
 
+        <CheckBox
+            android:id="@+id/imageViewHome"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:button="@null"
+            android:background="@drawable/anim_home_drawable"
+            android:layout_marginLeft="20dp" />
+
+        <CheckBox
+            android:id="@+id/imageViewLocation"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:button="@null"
+            android:background="@drawable/anim_location_drawable"
+            android:layout_marginLeft="20dp" />
+
     </LinearLayout>
 
 
