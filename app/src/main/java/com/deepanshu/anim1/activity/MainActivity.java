@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnOpenBasicAcitvity, btnImageSLiderAcitvity, btnOpenViewFlipperAcitvity, btnSliderAcitvity, btnActivityFragment,btnGetStartedAnim;
     private EditText editTextActivityFrag;
     private Intent intent = null;
-    private Button btnBottomSheet,btnModalBottomSheet,btnRatedANim,btnDodgeEdges,btnOpenPlaceholderAnim,btnOpenImageRoatateAnim,btnGestureAnim;
+    private Button btnBottomSheet,btnDragDrop,btnModalBottomSheet,btnRatedANim,btnDodgeEdges,btnOpenPlaceholderAnim,btnOpenImageRoatateAnim,btnGestureAnim;
    // private LikeButton likeButton;
     private ImageView imageView,imageViewMenu;
     private static  String TAG = "MainActivity";
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         animatedVectorDrawable = (AnimatedVectorDrawable) getResources().getDrawable(R.drawable.ic_menu_animatable);
         imageViewMenu.setImageDrawable(animatedVectorDrawable);
         imageViewSetting = findViewById(R.id.imageViewSetting);
+        btnDragDrop = findViewById(R.id.btnDragDrop);
         settingAnimDrawable= getResources().getDrawable(R.drawable.anim_setting_drawable);
         imageViewSetting.setBackgroundResource(R.drawable.anim_setting_drawable);
 
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnRatedANim.setOnClickListener(this);
         imageViewMenu.setOnClickListener(this);
         imageViewSetting.setOnClickListener(this);
+        btnDragDrop.setOnClickListener(this);
 /*
         likeButton.setOnLikeListener(new OnLikeListener() {
             @Override
@@ -174,6 +176,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 imageViewSetting.setBackgroundResource(R.drawable.anim_setting_drawable);
                 break;
 
+            case R.id.btnDragDrop:
+                intent = new Intent(this, DragDropActivity.class);
+                startActivity(intent);
+
+                break;
 
         }
     }
