@@ -20,6 +20,8 @@ import android.widget.Toast;
 import com.deepanshu.anim1.R;
 import com.deepanshu.anim1.fragment.SimpleFragment;
 
+import static com.deepanshu.anim1.activity.staticUtil.staticutil.showCustomToast;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, SimpleFragment.SendBackDataToActivity {
     private Button btnOpenBasicAcitvity, btnImageSLiderAcitvity, btnOpenViewFlipperAcitvity, btnSliderAcitvity, btnActivityFragment,btnGetStartedAnim;
     private EditText editTextActivityFrag;
@@ -172,6 +174,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.imageViewSetting:
+                showCustomToast(this,"Setting ");
                 //Toast.makeText(this, "setting", Toast.LENGTH_SHORT).show();
                 imageViewSetting.setBackgroundResource(R.drawable.anim_setting_drawable);
                 break;
